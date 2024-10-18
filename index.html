@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronogrammer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="controls">
+        <button id="addTaskBtn">Adicionar Tarefa</button>
+        <button id="addCategoryBtn">Adicionar Categoria</button>
+        <select id="filterSelect">
+            <option value="all">Todas as Categorias</option>
+            <!-- As categorias serão inseridas aqui via JavaScript -->
+        </select>
+    </div>
+
+    <!-- Modal para Adicionar Tarefa -->
+    <div id="addTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAddTaskModal">&times;</span>
+            <h2>Adicionar Tarefa</h2>
+            <form id="taskForm">
+                <label for="taskTitle">Título:</label>
+                <input type="text" id="taskTitle" required>
+
+                <label for="taskDescription">Descrição:</label>
+                <textarea id="taskDescription"></textarea>
+
+                <label for="taskCategory">Categoria:</label>
+                <select id="taskCategory"></select>
+
+                <label for="taskDate">Data:</label>
+                <input type="date" id="taskDate" required>
+
+                <label for="taskStart">Hora de Início:</label>
+                <input type="time" id="taskStart" required>
+
+                <label for="taskDuration">Duração:</label>
+                <input type="time" id="taskDuration" step="900" required>
+
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar Categoria -->
+    <div id="addCategoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAddCategoryModal">&times;</span>
+            <h2>Adicionar Categoria</h2>
+            <form id="categoryForm">
+                <label for="categoryInput">Nova Categoria:</label>
+                <input type="text" id="categoryInput" required>
+                <button type="submit" id="submitCategoryBtn">Adicionar Categoria</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content" id="Detalhes_tarefas">
+            <span class="close" id="closeTaskModal">&times;</span>
+            <h2>Detalhes da Tarefa</h2>
+            
+            <div>
+                <label id="taskTitleModal">Título:</label>
+                <p id="taskTitleInfo"></p>
+            </div>
+            
+            <div id="central_desc">
+                <label id="taskNotesModal">Descrição:</label>
+                <textarea id="taskNotesModal" readonly></textarea>
+            </div>
+    
+            <div>
+                <label id="taskCategoryModal">Categoria:</label>
+                <p id="taskCategoryInfo"></p>
+            </div>
+    
+            <div>
+                <label id="taskDateModal">Data:</label>
+                <p id="taskDateInfo"></p>
+            </div>
+    
+            <div>
+                <label id="taskStartModal">Início:</label>
+                <p id="taskStartInfo"></p>
+            </div>
+    
+            <div>
+                <label id="taskDurationModal">Duração:</label>
+                <p id="taskDurationInfo"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela do cronograma -->
+    <table id="scheduleTable">
+        <thead>
+            <tr id="scheduleTableHeader">
+                <th>Hora</th>
+                <!-- As datas serão inseridas aqui via JavaScript -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As células serão inseridas aqui via JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Barra de progresso -->
+    <div id="progress">
+        <div id="progressFill"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

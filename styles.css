@@ -1,0 +1,268 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4c765564; /* Fundo claro */
+    color: #333; /* Cor do texto */
+    
+    
+}
+
+header {
+    background-color: #003B5C; /* Azul escuro inspirado na Volkswagen */
+    color: #ffffff; /* Texto branco */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Estilos para Botões */
+button {
+    background-color: #4c7655a4; /* Verde */
+    color: #ffffff;
+    border:#333;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+
+}
+
+button:hover {
+    background-color: #005f70; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #042809; /* Texto branco */
+    font-weight: bold;
+
+}
+
+th, td {
+    padding: 0px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 60px;
+}
+
+th {
+    background-color: #93a988; /* Cabeçalho em vermelho escuro */
+    color: #ffffff; /* Texto branco */
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #73a27d64; /* Linhas pares com fundo claro */
+}
+
+tbody tr:hover {
+    background-color: #5b03033c; /* Efeito de destaque ao passar o mouse */
+}
+
+/* Estilos dos Modais */
+.modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1000; /* Para garantir que o modal fique acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite rolagem se necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff; /* Fundo branco para o modal */
+    margin: 15% auto; /* Margem para centralizar */
+    padding: 20px;
+    border: 1px solid #ccc; /* Bordas */
+    border-radius: 10px; /* Cantos arredondados */
+    width: 80%; /* Largura do modal */
+    max-width: 600px; /* Largura máxima */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    height: fit-content;
+    
+    
+}
+
+.close {
+    color: #aaa; /* Cor do botão de fechar */
+    float: right; /* Posiciona o botão à direita */
+    font-size: 28px; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+}
+
+.close:hover,
+.close:focus {
+    color: #f90000; /* Cor do botão de fechar ao passar o mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos do Progress Bar */
+#progressContainer {
+    width: 100%;
+    background-color: #ddd; /* Cor de fundo */
+    height: 20px; /* Altura da barra */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 20px 0;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0; /* Inicialmente 0% */
+    background-color: #007C92; /* Cor da barra de progresso */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: width 0.5s; /* Transição suave ao preencher */
+}
+
+/* Estilos Adicionais para Categorias */
+.category-list {
+    margin: 10px 0;
+    padding: 0;
+    list-style-type: none; /* Remove marcadores padrão */
+}
+
+.category-list li {
+    background-color: #e0f7fa; /* Cor de fundo suave para categorias */
+    border: 1px solid #007C92; /* Borda azul para categorias */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 8px;
+    margin: 5px 0; /* Espaço entre categorias */
+    transition: background-color 0.3s;
+}
+
+.category-list li:hover {
+    background-color: #f2cbb2; /* Destaque ao passar o mouse */
+}
+
+
+
+/* Ajustes das células da tabela */
+.task-cell {
+    position: relative; /* Para o posicionamento absoluto das tarefas */
+    height: 48px; /* Altura das células */
+    border: 1px solid #ccc; /* Borda visível */
+    overflow:visible; /* Para que as tarefas não extravasem as células */
+}
+
+/* Estilos de tarefas individuais */
+.task-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #216630bf; /* Cor da tarefa */
+    color: white; /* Cor do texto */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    z-index: 10; /* Para que fique acima das camadas de overlay */
+    position: absolute; /* Posição absoluta para permitir sobreposição */
+    top: 0; /* Início da célula */
+    left: 0;
+    right: 0;
+    height: auto; /* Altura dinâmica com base no tempo */
+    transition: background-color 0.3s; /* Para efeito ao passar o mouse */
+}
+
+.task-title:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #003B5C;
+    align-items: center;
+    min-height: 100px;
+    background-image: url(Imagens/Background_leaves.jpg);
+}
+
+#filterSelect {
+
+    border-radius: 15px;
+    max-height: 35px;
+    min-height: 34px;
+    background-color: #21663064;
+
+}
+
+
+#Detalhes_tarefas {
+
+    display:grid;
+    grid-auto-flow:row;
+
+    
+       
+
+}
+
+
+#Detalhes_tarefas p{
+
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    background-color: #7fb1e79f;
+    border-radius: 15px;
+    font-weight: bold;
+    min-height: 60px;
+    align-items: center;
+
+
+}
+
+#taskNotesModal {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 15px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 100%; /* Ocupar toda a largura do pai */
+    max-width: 100%; /* Garantir que não ultrapasse a largura */
+}
+
+#taskTitleModal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#Detalhes_tarefas label { 
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#central_desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100; /* Ocupar toda a extensão horizontal */
+    padding: 15px;
+}
